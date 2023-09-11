@@ -1,0 +1,71 @@
+{% extends 'backend/layouts/main.html' %}
+{% block content %}
+
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+
+
+   <!-- Left side columns -->
+   <div class="col-lg-12">
+    <div class="row">
+
+      <!-- Sales Card -->
+      <div class="col-xxl-4 col-md-6">
+        <div class="card info-card sales-card">
+         
+
+          <div class="card-body">
+            <h5 class="card-title">District</span></h5>
+
+            <h5>{{ districts.count }} districts</h5>
+          </div>
+
+            
+        </div>
+      </div><!-- End Sales Card -->
+
+      <!-- Revenue Card -->
+      <div class="col-xxl-4 col-md-6">
+        <div class="card info-card revenue-card">
+
+          
+
+          <div class="card-body">
+            <h5 class="card-title">Townships</span></h5>
+            <h5>{{ townships.count }} townships</h5>
+            
+          </div>
+
+        </div>
+      </div><!-- End Revenue Card -->
+
+      <!-- Customers Card -->
+      <div class="col-xxl-4 col-xl-12">
+
+        <div class="card info-card customers-card">
+
+          
+          <div class="card-body">
+            <h5 class="card-title">Village</span></h5>
+            <h5>{{ villages.count }} villages</h5>
+
+
+            
+
+          </div>
+        </div>
+
+      </div><!-- End Customers Card -->
+
+      
+
+    </div>
+  </div><!-- End Left side columns -->
+</div><!-- End Page Title -->
+{% endblock content %}
