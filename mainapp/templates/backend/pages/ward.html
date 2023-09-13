@@ -14,7 +14,7 @@
             <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
             <li class="breadcrumb-item"><a href="{% url 'districts' %}">District</a></li>
             <li class="breadcrumb-item"><a href="{% url 'townships' %}">Township</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'villages' %}">Village</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'wards' %}">Wards</a></li>
             <li class="breadcrumb-item active">Data</li>
           </ol>
         </nav>
@@ -26,9 +26,7 @@
   
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Total:  {{ villages.count }} Villages</h5>
-                <a href="" class="float-end btn btn-large btn-warning">New Village</a>
-
+                <h5 class="card-title">Total:{{ wards.count }} Wards</h5>
                 <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
   
                 <!-- Table with stripped rows -->
@@ -47,18 +45,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for village in villages %}
+                    {% for ward in wards %}
                     <tr>
                       <th scope="row">{{ forloop.counter }}</th>
-                      <td>{{ village.name }}</td>
-                      <td>{{ village.township }}</td>
-                      <td>{{ village.township.district }}</td>
-                      <td>{{ village.description|safe }}</td>
+                      <td>{{ ward.name }}</td>
+                      <td>{{ ward.township }}</td>
+                      <td>{{ ward.township.district }}</td>
+                      <td>{{ ward.description|safe }}</td>
                       <td>
-                         <img src="{{ village.image.url }}" alt="" style="width: 50px; height: 50px;">
+                         <img src="{{ ward.image.url }}" alt="" style="width: 50px; height: 50px;">
                       </td>
-                      <td>{{ village.location }}</td>
-                      <td>{{ village.created }}</td>
+                      <td>{{ ward.location }}</td>
+                      <td>{{ ward.created }}</td>
                       <td>
                         <a href="" class="btn btn-outline-primary">
                           <i class="bi bi-bookmark-check"></i><span></span>

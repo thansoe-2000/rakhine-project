@@ -29,9 +29,12 @@ def district(request):
      return render(request, 'backend/pages/district.html', context)
 
 def township(request):
+     villages = Village.objects.all()
+
      townships = Township.objects.all()
      context = {
-          'townships':townships
+          'townships':townships,
+          'villages':villages
      }
      return render(request, 'backend/pages/township.html', context)
 
@@ -41,3 +44,18 @@ def village(request):
           'villages':villages
      }
      return render(request, 'backend/pages/village.html', context)
+
+def ward(request):
+     wards = Ward.objects.all()
+     context = {
+          'wards':wards
+     }
+     return render(request, 'backend/pages/ward.html', context)
+
+
+def township_detail(request):
+     villages = Village.objects.all()
+     context = {
+          'villages':villages
+     }
+     return render(request, 'backend/pages/township_detail.html', context)
