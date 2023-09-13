@@ -53,9 +53,24 @@ def ward(request):
      return render(request, 'backend/pages/ward.html', context)
 
 
-def township_detail(request):
-     villages = Village.objects.all()
+def township_detail(request, pk=id):
+     townships = Township.objects.filter(district_id=pk)
+     villages = Village.objects.filter(township_id=pk)
      context = {
-          'villages':villages
+          'villages':villages,
+          'townships':townships
      }
      return render(request, 'backend/pages/township_detail.html', context)
+
+
+def district_detail(request, pk=id):
+     districts = District.objects.filter()
+     townships = Township.objects.filter(district_id=pk)
+     villages = Village.objects.filter(township_id=pk)
+
+     context = {
+          'districts':districts,
+          'townships':townships,
+          'villages':villages
+     }
+     return render(request, 'backend/pages/district_detail.html', context)

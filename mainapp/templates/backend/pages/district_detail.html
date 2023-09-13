@@ -12,7 +12,7 @@
      
 
       <div class="pagetitle">
-        <h4>{{ villages.first.township.name }}</h4>
+          <h4>{{ townships.first.district.name }}</h4>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
@@ -178,17 +178,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for village in villages %}
+                    {% for township in townships %}
                     <tr>
                       <th scope="row">{{ forloop.counter }}</th>
-                      <td>{{ village.name }}</td>
-                      <td>{{ village.township.district }}</td>
-                      <td>{{ village.description|safe }}</td>
+                      <td>{{ township.name }}</td>
+                      <td>{{ township.district }}</td>
+                      <td>{{ township.description|safe }}</td>
+                      
                       <td>
-                         <img src="{{ village.image.url }}" alt="" style="width: 50px; height: 50px;">
+                         <img src="{{ township.image.url }}" alt="" style="width: 50px; height: 50px;">
                       </td>
-                      <td>{{ village.location }}</td>
-                      <td>{{ village.created }}</td>
+                      <td>{{ township.location }}</td>
+                      <td>{{ township.created }}</td>
                       <td>
                         <a href="" class="btn btn-outline-primary">
                           <i class="bi bi-bookmark-check"></i><span></span>
