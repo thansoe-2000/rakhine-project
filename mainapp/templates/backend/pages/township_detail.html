@@ -1,5 +1,6 @@
 {% extends 'backend/layouts/main.html' %}
-{% block title %}Township{% endblock title %}Township
+{% block title %}
+{{ township_villages.first.township.name }} township{% endblock title %}
 {% block content %}
 {{ form.media }}
 
