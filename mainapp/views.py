@@ -40,7 +40,7 @@ def township(request):
           'villages':villages,
           'wards':wards
      }
-     return render(request, 'backend/pages/township.html', context)
+     return render(request, 'backend/pages/township_detail.html', context)
 
 def village(request):
      villages = Village.objects.all()
