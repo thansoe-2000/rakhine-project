@@ -1,4 +1,5 @@
 {% extends 'backend/layouts/main.html' %}
+{% block title %}Dashboard{% endblock title %}
 {% block content %}
 
 <div class="pagetitle">
@@ -16,56 +17,65 @@
     <div class="row">
 
       <!-- Sales Card -->
-      <div class="col-xxl-4 col-md-6">
+      <div class="col-xxl-3 col-md-6">
         <div class="card info-card sales-card">
-         
-
           <div class="card-body">
             <h5 class="card-title">District</span></h5>
-
             <h5>{{ districts.count }} districts</h5>
           </div>
-
-            
         </div>
       </div><!-- End Sales Card -->
 
-      <!-- Revenue Card -->
-      <div class="col-xxl-4 col-md-6">
+
+      <!-- Township Card -->
+      <div class="col-xxl-3 col-md-6">
         <div class="card info-card revenue-card">
-
-          
-
           <div class="card-body">
             <h5 class="card-title">Townships</span></h5>
             <h5>{{ townships.count }} townships</h5>
-            
           </div>
-
         </div>
-      </div><!-- End Revenue Card -->
-
-      <!-- Customers Card -->
-      <div class="col-xxl-4 col-xl-12">
-
-        <div class="card info-card customers-card">
+      </div><!-- End Township Card -->
 
           
+      <!-- Villages Card -->
+      <div class="col-xxl-3 col-xl-12">
+        <div class="card info-card customers-card">
           <div class="card-body">
             <h5 class="card-title">Village</span></h5>
             <h5>{{ villages.count }} villages</h5>
-
-
-            
-
           </div>
         </div>
+      </div><!-- End Villages Card -->
 
-      </div><!-- End Customers Card -->
-
+      <!-- wards Card -->
+      <div class="col-xxl-3 col-xl-12">
+        <div class="card info-card customers-card">
+          <div class="card-body">
+            <h5 class="card-title">Wards</span></h5>
+            <h5>{{ wards.count }} wards</h5>
+          </div>
+        </div>
+      </div><!-- End Villages Card -->
       
-
     </div>
   </div><!-- End Left side columns -->
 </div><!-- End Page Title -->
 {% endblock content %}
+            
+
+
+            
+         
+
+
+
+
+          
+
+
+            
+
+
+
+      
