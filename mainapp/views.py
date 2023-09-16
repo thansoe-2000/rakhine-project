@@ -57,24 +57,7 @@ def ward(request):
      return render(request, 'backend/pages/ward.html', context)
 
 
-def township_detail(request, pk=id):
-     districts = District.objects.all()
-     townships = Township.objects.all()
-     wards = Ward.objects.all()
-     villages = Village.objects.all()
-     township_townships = Township.objects.filter(district_id=pk)
-     township_villages = Village.objects.filter(township_id=pk)
-     township_wards = Ward.objects.filter(township_id=pk)
-     context = {
-          'township_townships':township_townships,
-          'township_villages':township_villages,
-          'township_wards':township_wards,
-          'districts':districts,
-          'townships':townships,
-          'villages':villages,
-          'wards':wards
-     }
-     return render(request, 'backend/pages/township_detail.html', context)
+
 
 
 def district_detail(request, pk=id):
@@ -95,3 +78,49 @@ def district_detail(request, pk=id):
           'district_wards':district_wards
      }
      return render(request, 'backend/pages/district_detail.html', context)
+
+def township_detail(request, pk=id):
+     districts = District.objects.all()
+     townships = Township.objects.all()
+     wards = Ward.objects.all()
+     villages = Village.objects.all()
+     township_townships = Township.objects.filter(district_id=pk)
+     township_villages = Village.objects.filter(township_id=pk)
+     township_homes = Village.objects.filter(township=pk)
+     township_wards = Ward.objects.filter(township_id=pk)
+     context = {
+          'township_townships':township_townships,
+          'township_villages':township_villages,
+          'township_wards':township_wards,
+          'districts':districts,
+          'townships':townships,
+          'villages':villages,
+          'wards':wards,
+          'township_homes':township_homes
+     }
+     return render(request, 'backend/pages/township_detail.html', context)
+
+def village_detail(request, pk=id):
+     districts = District.objects.all()
+     townships = Township.objects.all()
+     wards = Ward.objects.all()
+     villages = Village.objects.all()
+     homes = VillageHome.objects.all()
+     township_townships = Township.objects.filter(district_id=pk)
+     township_villages = Village.objects.filter(township_id=pk)
+     township_wards = Ward.objects.filter(township_id=pk)
+     village_homes = VillageHome.objects.filter(village_home_id=pk)
+     township_homes = Village.objects.filter(township=pk)
+     context = {
+          'township_townships':township_townships,
+          'township_villages':township_villages,
+          'township_wards':township_wards,
+          'districts':districts,
+          'townships':townships,
+          'villages':villages,
+          'wards':wards,
+          'homes':homes,
+          'village_homes':village_homes,
+          'township_homes':township_homes
+     }
+     return render(request, 'backend/pages/village_detail.html', context)

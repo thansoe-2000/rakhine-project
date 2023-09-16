@@ -50,7 +50,22 @@ class Ward(models.Model):
      def __str__(self):
           return self.name
 
+class VillageHome(models.Model):
+     village_home = models.ForeignKey(Village, on_delete=models.CASCADE)
+     home_id = models.CharField(max_length=100)
+     owner = models.CharField(max_length=100)
 
+     def __str__(self):
+          return self.owner
+
+class TownshipWard(models.Model):
+     township_home = models.ForeignKey(Township, on_delete=models.CASCADE)
+     home_id = models.CharField(max_length=100)
+     owner = models.CharField(max_length=100)
+
+     def __str__(self):
+          return self.owner
+     
 class Category(models.Model):
      name = models.CharField(max_length=200)
      image = models.ImageField(upload_to = 'picture')
