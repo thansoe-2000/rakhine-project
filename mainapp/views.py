@@ -7,12 +7,13 @@ def dashboard(request):
      townships = Township.objects.all()
      wards = Ward.objects.all()
      villages = Village.objects.all()
-     
+     homes = VillageHome.objects.all()
      context = {
           'districts':districts,
           'townships':townships,
           'villages':villages,
           'wards':wards,
+          'homes':homes
          
      }
      return render(request, 'backend/layouts/dashboard.html', context)
@@ -98,6 +99,7 @@ def township_detail(request, pk=id):
      
      township_wards = Ward.objects.filter(township_id=pk)
      context = {
+          
           'township_townships':township_townships,
           'township_villages':township_villages,
           'township_wards':township_wards,
@@ -114,13 +116,17 @@ def village_detail(request, pk=id):
      townships = Township.objects.all()
      wards = Ward.objects.all()
      villages = Village.objects.all()
-    
+     homes = VillageHome.objects.all()
+     # township_homes = Township.objects.filter(township_id=pk)
      township_townships = Township.objects.filter(district_id=pk)
      township_villages = Village.objects.filter(township_id=pk)
      township_wards = Ward.objects.filter(township_id=pk)
+     village_homes = VillageHome.objects.filter(village_id=pk)
+     
      
      
      context = {
+          # 'township_homes':township_homes,
           'township_townships':township_townships,
           'township_villages':township_villages,
           'township_wards':township_wards,
@@ -128,6 +134,8 @@ def village_detail(request, pk=id):
           'townships':townships,
           'villages':villages,
           'wards':wards,
+          'homes':homes,
+          'village_homes':village_homes
           
          
      }

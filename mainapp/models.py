@@ -37,7 +37,14 @@ class Village(models.Model):
      
      def __str__(self):
           return self.name
+class VillageHome(models.Model):
+     village = models.ForeignKey(Village, on_delete=models.CASCADE)
+     homenumber = models.IntegerField(blank=True, null=True)
+     owner = models.CharField(max_length=200)
 
+     def __str__(self):
+          return self.owner
+          
 class Ward(models.Model):
      township = models.ForeignKey(Township, on_delete=models.CASCADE)
      name = models.CharField(max_length=200)
@@ -51,7 +58,7 @@ class Ward(models.Model):
           return self.name
 
 
-     
+
 class Category(models.Model):
      name = models.CharField(max_length=200)
      image = models.ImageField(upload_to = 'picture')
