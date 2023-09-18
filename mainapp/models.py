@@ -52,6 +52,26 @@ class Ward(models.Model):
           return self.name
 
 
+class WardHome(models.Model):
+     ward = models.ForeignKey(Ward, on_delete=models.CASCADE)
+     homenumber = models.IntegerField()
+     owner = models.CharField(max_length=100)
+     location = models.CharField(max_length=100)
+
+     def __str__(self):
+          return self.owner
+
+
+class VillageHome(models.Model):
+     village = models.ForeignKey(Village, on_delete=models.CASCADE)
+     homenumber = models.IntegerField()
+     owner = models.CharField(max_length=100)
+     location = models.CharField(max_length=100)
+
+     def __str__(self):
+          return self.owner
+
+
 
 class Category(models.Model):
      name = models.CharField(max_length=200)
