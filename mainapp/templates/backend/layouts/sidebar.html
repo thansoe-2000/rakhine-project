@@ -128,22 +128,6 @@
       {% endfor %}
     </li><!-- End Tables Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="">
-        <i class="bi bi-shop"></i><span>Villages</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      {% for township_village in township_villages %}
-      <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-       
-        <li>
-          <a href="">
-            <i class="bi bi-circle"></i><span>{{ township_village.name }}</span>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-      
-    </li><!-- End Charts Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
